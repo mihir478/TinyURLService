@@ -1,0 +1,19 @@
+﻿@model string
+
+<h2>Shorten URL</h2>
+
+<!-- Example Long URL: https://broadridge.udemy.com/organization/home/ -->
+
+<form asp-action="ShortenUrl" method="post">
+    <div>
+        <label for="longUrl">Long URL:</label>
+        <input type="text" id="longUrl" name="longUrl" required>
+    </div>
+    <button type="submit">Shorten</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <h3>Short URL:</h3>
+    <p><a href="@Model">@Model</a></p>
+}
